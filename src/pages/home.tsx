@@ -1,6 +1,12 @@
+import SectionFindRide from "../components/sectionFindRide";
+
 const Home = () => {
   return (
-    <div className='min-h-dvh min-w-full bg-red-600'>Home</div>
+    <div className='min-h-dvh min-w-full max-w-full'>
+        <SectionFindRide />
+
+
+    </div>
   )
 }
 
