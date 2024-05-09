@@ -70,7 +70,7 @@ const SectionFindRide = () => {
     }
 
     return (
-        <div className="w-full md:h-[46.36rem] px-4 md:px-24 flex flex-col mt-20 md:mt-0 md:flex-row justify-between items-center">
+        <div className="w-full min-[1400px]:h-[46.36rem] px-4 min-[1400px]:px-24 flex flex-col mt-20 min-[1400px]:mt-0 min-[1400px]:flex-row justify-between items-center">
             <img
                 src="https://challengeuolpbcompass.s3.amazonaws.com/Home/imageFirstSectionFindRide.png"
                 alt=""
@@ -78,19 +78,19 @@ const SectionFindRide = () => {
             />
             <div>
                 <div>
-                    <h2 className="text-xl md:text-2xl text-white mt-7 md:mt-0">
+                    <h2 className="text-xl min-[1400px]:text-2xl text-white mt-7 min-[1400px]:mt-0">
                         NEED A RIDE?
                     </h2>
-                    <h2 className="text-4xl md:text-5xl text-white flex mb-7">
+                    <h2 className="text-4xl min-[1400px]:text-5xl text-white flex mb-7">
                         Book with
-                        <span className="text-4xl md:text-5xl text-[#FBA403]">
+                        <span className="text-4xl min-[1400px]:text-5xl text-[#FBA403]">
                             &nbsp;myRIDE&nbsp;
                         </span>
                         now!
                     </h2>
                     <form
                         action=""
-                        className="gap-4 flex flex-col md:w-[38.125rem] bg-[#2C2C2C] py-[1.875rem] px-8 mx-4 md:mx-0"
+                        className="gap-4 flex flex-col md:w-[38.125rem] bg-[#2C2C2C] py-[1.875rem] px-8 mx-4 min-[1400px]:mx-0"
                     >
                         <p className="text-2xl text-white">Find a ride now</p>
                         <MyTextField
@@ -105,7 +105,8 @@ const SectionFindRide = () => {
                         <div className="flex items-center justify-between">
                             <button
                                 type="button"
-                                className="rounded-[0.25rem] flex items-center gap-1 bg-[#FBA403] px-2 py-5 md:px-7 md:py-4 text-white"
+
+                                className="rounded-[0.25rem] flex items-center gap-1 bg-[#FBA403] px-2 py-5 min-[1400px]:px-7 min-[1400px]:py-4 text-white"
                             >
                                 <img
                                     src="https://challengeuolpbcompass.s3.amazonaws.com/Home/lupe.svg"
