@@ -105,6 +105,7 @@ const SectionFindRide = () => {
                         <div className="flex items-center justify-between">
                             <button
                                 type="button"
+
                                 className="rounded-[0.25rem] flex items-center gap-1 bg-[#FBA403] px-2 py-5 min-[1400px]:px-7 min-[1400px]:py-4 text-white"
                             >
                                 <img
