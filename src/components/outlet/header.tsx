@@ -16,20 +16,28 @@ const Header = () => {
                         <a href="/">Home</a>
                     </li>
                     <li className="text-white cursor-pointer text-base">
-                        <a href="/">Getting a Taxi</a>
+                        <a href="/iDontKnowSomePage">Getting a Taxi</a>
                     </li>
                     <li className="text-white cursor-pointer text-base">
-                        <a href="/">Mobile App</a>
+                        <a href="/iDontKnowSomePage2">Mobile App</a>
                     </li>
                     <li className="text-white cursor-pointer text-base">
-                        <a href="/">Contact Us</a>
+                        <a href="/iDontKnowSomePag3">Contact Us</a>
                     </li>
                 </ul>
                 <div className="flex items-center gap-5">
-                    <img src="https://challengeuolpbcompass.s3.amazonaws.com/Outlet/bellNotifyIcon.svg" alt="A notification bell icon, entirely in white, with a yellow circle located at its upper right corner." className="cursor-pointer"/>
-                    
+                    <img
+                        src="https://challengeuolpbcompass.s3.amazonaws.com/Outlet/bellNotifyIcon.svg"
+                        alt="A notification bell icon, entirely in white, with a yellow circle located at its upper right corner."
+                        className="cursor-pointer"
+                    />
+
                     <div className="w-[0.01rem] h-9 bg-[#333333]"></div>
-                    <img src="https://challengeuolpbcompass.s3.amazonaws.com/Outlet/userAvatar.png" alt="Avata image with borders full rounded." className="cursor-pointer"/>
+                    <img
+                        src="https://challengeuolpbcompass.s3.amazonaws.com/Outlet/userAvatar.png"
+                        alt="Avata image with borders full rounded."
+                        className="cursor-pointer"
+                    />
                 </div>
             </div>
         </header>
