@@ -43,11 +43,17 @@ const Footer = () => {
                     <p className="text-xl gap-5">Company</p>
 
                     <ul className="flex flex-col gap-3">
-                        <li className="text-base cursor-pointer">About Us</li>
-                        <li className="text-base cursor-pointer">News</li>
-                        <li className="text-base cursor-pointer">Careers</li>
                         <li className="text-base cursor-pointer">
-                            How we work
+                            <a href="/somePagebalbalbalkTest">About Us</a>
+                        </li>
+                        <li className="text-base cursor-pointer">
+                            <a href="/somePagebalbalbalkTest">News</a>
+                        </li>
+                        <li className="text-base cursor-pointer">
+                            <a href="/somePagebalbalbalkTest">Careers</a>
+                        </li>
+                        <li className="text-base cursor-pointer">
+                            <a href="/testOtherPage12345">How we work</a>
                         </li>
                     </ul>
                 </div>
@@ -56,12 +62,17 @@ const Footer = () => {
                     <p className="text-xl gap-5">Support</p>
 
                     <ul className="flex flex-col sm:w-44 gap-3">
-                        <li className="text-base cursor-pointer">FAQ</li>
-                        <li className="text-base cursor-pointer">US Office</li>
                         <li className="text-base cursor-pointer">
-                            Asia Office
+                            <a href="/testTesttestTestTest">FAQ</a>
                         </li>
                         <li className="text-base cursor-pointer">
+                            <a href="/testTesttestTestTest">US Office</a>
+                        </li>
+                        <li className="text-base cursor-pointer">
+                            <a href="/testTesttestTestTest">Asia Office</a>
+                        </li>
+                        <li className="text-base cursor-pointer">
+                            <a href="/testTesttestTestTest"></a>
                             Help Center
                         </li>
                     </ul>
@@ -72,13 +83,19 @@ const Footer = () => {
 
                     <ul className="flex flex-col gap-3">
                         <li className="text-base cursor-pointer">
-                            Become a partner
+                            <a href="testAgainTestAgainTestTest">
+                                Become a partner
+                            </a>
                         </li>
                         <li className="text-base cursor-pointer">
-                            Partner Support
+                            <a href="testAgainTestAgainTestTest">
+                                Partner Support
+                            </a>
                         </li>
                         <li className="text-base cursor-pointer">
-                            Mobile app links
+                            <a href="testAgainTestAgainTestTest">
+                                Mobile app links
+                            </a>
                         </li>
                     </ul>
                 </div>
