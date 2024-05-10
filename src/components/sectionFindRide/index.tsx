@@ -95,25 +95,20 @@ const SectionFindRide = () => {
                         <p className="text-2xl text-white">Find a ride now</p>
                         <MyTextField
                             label="Your Pickup"
-                            defaultValue="Current Location"
+                            value={location ? `${location.city}, ${location.state_prov}` : ""}
+                            
                         />
                         <MyTextField
                             label="Your Destination"
-                            value={location ? `${location.city}, ${location.state_prov}` : ""}
-                            focused
                         />
                         <div className="flex items-center justify-between">
-                            <button
-                                type="button"
-
-                                className="rounded-[0.25rem] flex items-center gap-1 bg-[#FBA403] px-2 py-5 min-[1400px]:px-7 min-[1400px]:py-4 text-white"
-                            >
+                            <a href="/randomPage" className="rounded-[0.25rem] flex items-center gap-1 bg-[#FBA403] px-2 py-5 min-[1400px]:px-7 min-[1400px]:py-4 text-white">
                                 <img
                                     src="https://challengeuolpbcompass.s3.amazonaws.com/Home/lupe.svg"
                                     alt=""
                                 />{" "}
                                 FIND A DRIVER
-                            </button>
+                            </a>
                             <p className="text-[#FBA403]">MORE OPTIONS</p>
                         </div>
                     </form>

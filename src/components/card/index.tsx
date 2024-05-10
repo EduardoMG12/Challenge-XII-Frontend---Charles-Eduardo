@@ -1,22 +1,64 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Loading from "../loading";
 
-interface IPropsCard {
+interface ICard {
     imgUrl: string;
     title: string;
     paragraph: string;
-    altImg?:string;
-    cardLinkLearnMore:string;
+    altImg: string;
+    cardLinkLearnMore: string;
 }
-const Card: React.FC<IPropsCard>= ({ imgUrl, altImg, title, paragraph, cardLinkLearnMore }) => {
+
+interface ICardProps {
+    requestLink:string
+}
+
+const Card:React.FC<ICardProps> = ({requestLink}) => {
+    const [card, setCard] = useState<ICard>();
+
+    useEffect(() => {
+        axios
+            .get(requestLink)
+            .then((response) => {
+                setCard(response.data);
+            })
+            .catch((error) => {
+                console.error("Erro find card:", error);
+            });
+    });
+
+// remember fix this conditional
+    if (!card) {
+        return (
+            <div className="flex flex-col justify-between bg-[#383838] max-w-[19.1875rem]">
+                <div className=" w-[19.1875rem] h-[13.375rem] flex items-center justify-center">
+                <Loading />
+                </div>
+                <div className="flex flex-col px-4 py-4">
+                    <h3 className="text-base text-[#FFFFFF] mb-2">Loading.</h3>
+                    <p className="text-base text-[#B3B3B3] mb-3">
+                        Loading...
+                    </p>
+                    <span className="flex justify-end  items-center text-[#FBA403] text-sm">
+                        <a>Loading...</a>
+                    </span>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="flex flex-col justify-between bg-[#383838] max-w-[19.1875rem]">
-            <img src={imgUrl} alt={altImg} />
+            <img src={card.imgUrl} alt={card.altImg} />
             <div className="flex flex-col px-4 py-4">
-                <h3 className="text-base text-[#FFFFFF] mb-2">{title}</h3>
+                <h3 className="text-base text-[#FFFFFF] mb-2">{card.title}</h3>
                 <p className="text-base text-[#B3B3B3] mb-3">
-                    {paragraph}
+                    {card.paragraph}
                 </p>
-                <span className="flex justify-end  items-center text-[#FBA403] text-sm"><a href={cardLinkLearnMore}>Learn more</a></span>
+                <span className="flex justify-end  items-center text-[#FBA403] text-sm">
+                    <a href={card.cardLinkLearnMore}>Learn more</a>
+                </span>
             </div>
         </div>
     );
