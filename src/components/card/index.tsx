@@ -47,14 +47,14 @@ const Card:React.FC<ICardProps> = ({requestLink}) => {
             </div>
         );
     }
-
+// temporary moc
     return (
         <div className="flex flex-col justify-between bg-[#383838] max-w-[19.1875rem]">
-            <img src={card.imgUrl} alt={card.altImg} />
+            <img src="https://challengeuolpbcompass.s3.amazonaws.com/Home/secondSection/firstCar.png" alt="{card.altImg}" />
             <div className="flex flex-col px-4 py-4">
-                <h3 className="text-base text-[#FFFFFF] mb-2">{card.title}</h3>
+                <h3 className="text-base text-[#FFFFFF] mb-2">Basic</h3>
                 <p className="text-base text-[#B3B3B3] mb-3">
-                    {card.paragraph}
+                The best balance of price and comfort. You will not go wrong with our basic rides.
                 </p>
                 <span className="flex justify-end  items-center text-[#FBA403] text-sm">
                     <a href={card.cardLinkLearnMore}>Learn more</a>
