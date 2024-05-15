@@ -1,6 +1,31 @@
+import { useEffect, useState } from 'react';
 import Card from '../card';
+import axios from 'axios';
+
+export interface ICard {
+    id: number,
+    altImg: string
+    imgUrl: string,
+    title: string,
+    paragraph:string,
+    cardLinkLearnMore:string
+}
 
 const SectionClassRides = () => {
+    const [cards, setCards] = useState<ICard[]>()
+
+    useEffect(() => {
+        axios
+        .get( `${import.meta.env.VITE_API_LINK}/cards`)
+        .then((response) => {
+            setCards(response.data);
+            console.log(response.data)
+        })
+        .catch((error) => {
+            console.error("Erro find card:", error);
+        });
+    }, [])
+
   return (
     <div className='flex flex-col w-full justify-center items-center'>
         <div>
@@ -8,10 +33,9 @@ const SectionClassRides = () => {
             <h3 className='text-[2.813rem] text-white font-bold mb-[3.75rem]'>Best in class rides</h3>
         </div>
         <div className='flex gap-8 flex-wrap justify-center items-center'>
-        <Card requestLink='sla'/>
-        <Card requestLink='sla'/>
-        <Card requestLink='sla'/>
-        <Card requestLink='sla'/>
+            {cards?.map((card) => (
+                <Card card={card} key={card.id}/>
+            ))}
         </div>
     </div>
   )
