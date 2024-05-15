@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import MyTextField from "../textFieldOutline";
 import axios from "axios";
+import { localStorageValidation } from "../../utils/fetchGeoLocation";
 
-interface ILocationState {
+export interface ILocationState {
     city: string;
     state_prov: string;
     state_code: string;
@@ -16,8 +17,12 @@ interface ILocationState {
 }
 
 const SectionFindRide = () => {
-    const [ip, setIp] = useState(null);
+    const [ip, setIp] = useState("");
     const [location, setLocation] = useState<ILocationState | null>(null);
+    const [yourPickupInput, setYourPickupInput] = useState("");
+    const [yourDestinationInput, setYourDestinationInput] = useState("");
+    const [firstInputError, setFirstInputError] = useState(false);
+    const [secondInputError, setSecondInputError] = useState(false);
 
     useEffect(() => {
         axios
@@ -31,43 +36,26 @@ const SectionFindRide = () => {
     }, []);
 
     useEffect(() => {
-        localStorageValidation();
+        localStorageValidation(ip, setLocation);
     }, [ip]);
 
-    function localStorageValidation() {
-        if (localStorage.getItem("ip") && localStorage.getItem("location")) {
-            if (localStorage.getItem("ip") === ip) {
-                setLocation(JSON.parse(localStorage.getItem("location")!));
-            } else {
-                ip && localStorage.setItem("ip", ip);
-                fetchGeoLocation();
-            }
-        } else {
-            ip && localStorage.setItem("ip", ip);
-            fetchGeoLocation();
+    useEffect(() => {
+        if (location) {
+            setYourPickupInput(`${location.city}, ${location.state_prov}`);
         }
-    }
-    function fetchGeoLocation() {
-        if (ip) {
-            axios
-                .get("https://api.ipgeolocation.io/ipgeo", {
-                    params: {
-                        apiKey: import.meta.env.VITE_IPGEOLOCATION_API_KEY,
-                        ip: ip,
-                    },
-                })
-                .then((response) => {
-                    setLocation(response.data);
-                    localStorage.setItem(
-                        "location",
-                        JSON.stringify(response.data)
-                    );
-                })
-                .catch((error) => {
-                    console.error("Erro ao buscar localização:", error);
-                });
+    }, [location]);
+
+    const validationInputs = () => {
+        if (!yourPickupInput) {
+            setFirstInputError(true);
         }
-    }
+        if (!yourDestinationInput) {
+            setSecondInputError(true);
+        }
+        if(yourPickupInput && yourDestinationInput){
+            window.location.href="/randomPage"
+        }
+    };
 
     return (
         <div className="w-full min-[1400px]:h-[46.36rem] px-4 min-[1400px]:px-24 flex flex-col mt-20 min-[1400px]:mt-0 min-[1400px]:flex-row justify-between items-center">
@@ -95,14 +83,23 @@ const SectionFindRide = () => {
                         <p className="text-2xl text-white">Find a ride now</p>
                         <MyTextField
                             label="Your Pickup"
-                            value={location ? `${location.city}, ${location.state_prov}` : ""}
-                            
+                            value={yourPickupInput}
+                            err={firstInputError}
+                            setValueFather={setYourPickupInput}
+                            setErrFather={setFirstInputError}
                         />
                         <MyTextField
                             label="Your Destination"
+                            value={yourDestinationInput}
+                            err={secondInputError}
+                            setValueFather={setYourDestinationInput}
+                            setErrFather={setSecondInputError}
                         />
                         <div className="flex items-center justify-between">
-                            <a href="/randomPage" className="rounded-[0.25rem] flex items-center gap-1 bg-[#FBA403] px-2 py-5 min-[1400px]:px-7 min-[1400px]:py-4 text-white">
+                            <a
+                                onClick={validationInputs}
+                                className="rounded-[0.25rem] flex items-center gap-1 bg-[#FBA403] px-2 py-5 min-[1400px]:px-7 min-[1400px]:py-4 text-white"
+                            >
                                 <img
                                     src="https://challengeuolpbcompass.s3.amazonaws.com/Home/lupe.svg"
                                     alt=""

@@ -7,15 +7,20 @@ interface ITextFielProps extends ComponentProps<"input">{
     label:string
     defaultValue?:string
     focused?:boolean
-
+    setErrFather: React.Dispatch<React.SetStateAction<boolean>>
+    err: boolean
+    setValueFather: React.Dispatch<React.SetStateAction<string>>
 }
 
-const MyTextField:React.FC<ITextFielProps> = ({defaultValue, label, focused, value:valueProp}) => {
+const MyTextField:React.FC<ITextFielProps> = ({defaultValue, label, focused, value:valueProp, setErrFather, err, setValueFather}) => {
   const [value, setValue] = useState(defaultValue);
   const [isFocused, setIsFocused] = useState(false);
 
-  const handleChange = (event: { target: { value: React.SetStateAction<string | undefined>; }; }) => {
-    setValue(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.target.value
+    setValue(newValue);
+    setValueFather(newValue)
+    setErrFather(false)
   };
 
   const handleClear = () => {
@@ -27,6 +32,7 @@ const MyTextField:React.FC<ITextFielProps> = ({defaultValue, label, focused, val
   }, [valueProp])
   return (
     <TextField
+      error={err}
       label={label}
       InputLabelProps={{shrink: true}}
       value={!defaultValue ? value ?? "" : defaultValue}
@@ -39,7 +45,7 @@ const MyTextField:React.FC<ITextFielProps> = ({defaultValue, label, focused, val
         endAdornment: (
           <InputAdornment position="end">
             <IconButton edge="end" onClick={handleClear}>
-            {focused 
+            {value ? focused 
             ?
             <img src="https://challengeuolpbcompass.s3.amazonaws.com/Home/focusClearInput.svg" alt=""/>
              : 
@@ -49,7 +55,7 @@ const MyTextField:React.FC<ITextFielProps> = ({defaultValue, label, focused, val
              : 
              
                 <img src="https://challengeuolpbcompass.s3.amazonaws.com/Home/clearInput.svg" alt=""/>
-                }
+               : null }
             </IconButton>
           </InputAdornment>
         ),
