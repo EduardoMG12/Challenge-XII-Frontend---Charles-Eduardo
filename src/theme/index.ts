@@ -44,5 +44,12 @@ export const theme = createTheme({
               },
             },
           },
+          MuiSelect: {
+            styleOverrides: {
+                icon: {
+                    color: '#FFFFFF', // Substitua 'cor_desejada' pela cor que você quer.
+                },
+            },
+        },
     },
 });
