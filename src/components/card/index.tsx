@@ -3,14 +3,11 @@ import Loading from "../loading";
 import { ICard } from "../sectionClassRides";
 
 interface ICardProps {
-    card:ICard
+    card:ICard | undefined
 }
 
 const Card:React.FC<ICardProps> = ({card}) => {
-
-
-// remember fix this conditional
-    if (!card) {
+    if (card === undefined) {
         return (
             <div className="flex flex-col justify-between bg-[#383838] max-w-[19.1875rem]">
                 <div className=" w-[19.1875rem] h-[13.375rem] flex items-center justify-center">
@@ -28,7 +25,6 @@ const Card:React.FC<ICardProps> = ({card}) => {
             </div>
         );
     }
-// temporary moc
     return (
         <div className="flex flex-col justify-between bg-[#383838] max-w-[19.1875rem]">
             <img src={card.imgUrl} alt={card.altImg} />
