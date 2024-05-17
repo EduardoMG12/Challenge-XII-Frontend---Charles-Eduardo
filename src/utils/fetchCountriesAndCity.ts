@@ -17,7 +17,7 @@ export function fetchCountries(
     setCountries: React.Dispatch<React.SetStateAction<string[] | undefined>>
 ) {
     axios
-        .get<Countries>("https://countriesnow.space/api/v0.1/countries")
+        .get<Countries>(`${import.meta.env.VITE_API_COUNTRIES}`)
         .then((response) => {
             const sortedCountries = response.data.data.sort((a, b) =>
                 a.country.localeCompare(b.country)
@@ -43,7 +43,7 @@ export function fetchCities(
     setCities: React.Dispatch<React.SetStateAction<string[] | undefined>>
 ) {
     axios
-        .post<Cities>("https://countriesnow.space/api/v0.1/countries/cities", {
+        .post<Cities>(`${import.meta.env.VITE_API_COUNTRIES}/cities`, {
             country: countryName,
         })
         .then((response) => {

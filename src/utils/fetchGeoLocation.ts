@@ -24,7 +24,7 @@ function fetchGeoLocation(
 ) {
     if (ip) {
         axios
-            .get("https://api.ipgeolocation.io/ipgeo", {
+            .get(`${import.meta.env.VITE_API_IPGEOLOCATION}`, {
                 params: {
                     apiKey: import.meta.env.VITE_IPGEOLOCATION_API_KEY,
                     ip: ip,
