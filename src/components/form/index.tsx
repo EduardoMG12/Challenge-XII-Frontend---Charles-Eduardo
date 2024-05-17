@@ -35,7 +35,11 @@ const schema = z.object({
     carType: z.enum(["sedan", "suv/van", "semi luxury", "luxury"]),
 });
 
-const Form = () => {
+interface IPropsForm{
+    setSucess:React.Dispatch<React.SetStateAction<{formBool: boolean, returnApi: string}>>
+}
+
+const Form: React.FC<IPropsForm> = ({setSucess}) => {
     const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm<IFormState>({
         resolver: zodResolver(schema),
         mode: "onSubmit",
@@ -48,8 +52,7 @@ const Form = () => {
     const onSubmit = (data: IFormState) => {
         axios.post(`${import.meta.env.VITE_API_LINK}/driver-application`, data)
             .then(response => {
-                console.log(response.data);
-                console.log(data);
+                setSucess(({ returnApi: response.data, formBool: true }));
             })
             .catch(error => {
                 console.error('There was an error!', error);
