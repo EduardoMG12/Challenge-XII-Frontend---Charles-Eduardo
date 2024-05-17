@@ -22,7 +22,7 @@ const carTypes = [
         value: "Semi Luxury"
     },
     {
-        type: "luxury car",
+        type: "luxury",
         imgSrc: "https://challengeuolpbcompass.s3.amazonaws.com/Home/sectionThreeFormulary/convertibleIcon.svg",
         altImg: "",
         value: "Luxury Car"
@@ -40,7 +40,7 @@ interface ISelectTypeCarProps {
   
     const handleCarTypeChange = (value: TCarType) => {
       setSelectedCarType(value);
-      setValue("selectTypeCar", value);
+      setValue("carType", value);
       console.log(value)
     };
   
@@ -82,7 +82,7 @@ interface ISelectTypeCarProps {
       >
         <img src={linkImg} alt={altImg} className="w-[2.149rem]" />
         <p className="text-sm text-white">{value}</p>
-        <input type="radio" value={type} {...register("selectTypeCar")} style={{ display: 'none' }} />
+        <input type="radio" value={type} {...register("carType")} style={{ display: 'none' }} />
       </label>
     );
   };
