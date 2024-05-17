@@ -36,7 +36,7 @@ interface ISelectTypeCarProps {
   }
   
   const SelectTypeCar: React.FC<ISelectTypeCarProps> = ({ register, setValue, ...props }) => {
-    const [selectedCarType, setSelectedCarType] = useState<TCarType | "">("sedan");
+    const [selectedCarType, setSelectedCarType] = useState<TCarType | "">("");
   
     const handleCarTypeChange = (value: TCarType) => {
       setSelectedCarType(value);

@@ -8,9 +8,10 @@ interface ISelectCityProps {
   register: UseFormRegister<IFormState>;
   setValue: UseFormSetValue<IFormState>;
   country: string;
+  error:boolean
 }
 
-const SelectCity: React.FC<ISelectCityProps> = ({ register, setValue, country, ...props}) => {
+const SelectCity: React.FC<ISelectCityProps> = ({ register, setValue, country, error, ...props}) => {
     const [cities, setCities] = useState<string[]>();
     const [city, setCity] = useState<string>("City");
 
@@ -31,7 +32,7 @@ const SelectCity: React.FC<ISelectCityProps> = ({ register, setValue, country, .
             select
             className="flex-1"
             value={city}
-
+            error={error}
             onChange={(e) => handleCityChange(e.target.value)}
             {...props}
         >

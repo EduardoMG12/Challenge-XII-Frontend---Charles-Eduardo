@@ -1,15 +1,16 @@
-import { MenuItem, TextField } from "@mui/material";
+import { FormHelperText, MenuItem, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { fetchCountries } from "../../../utils/fetchCountriesAndCity";
-import { UseFormRegister, UseFormSetValue } from "react-hook-form";
+import { FieldErrors, UseFormRegister, UseFormSetValue } from "react-hook-form";
 import { IFormState } from "..";
 
 interface ISelectCountriesProps {
   register: UseFormRegister<IFormState>;
   setValue: UseFormSetValue<IFormState>;
+  error: boolean
 }
 
-const SelectCountries: React.FC<ISelectCountriesProps> = ({ register, setValue, ...props }) => {
+const SelectCountries: React.FC<ISelectCountriesProps> = ({ register, setValue, error, ...props }) => {
   const [countries, setCountries] = useState<string[]>();
  const [selectedCountry, setSelectedCountry] = useState<string>("Singapore");
  
@@ -30,6 +31,7 @@ const SelectCountries: React.FC<ISelectCountriesProps> = ({ register, setValue, 
       label="Country"
       value={selectedCountry}
       className="flex-1"
+      error={error}
       onChange={(e) => handleCountryChange(e.target.value)}
       {...props}
     >
