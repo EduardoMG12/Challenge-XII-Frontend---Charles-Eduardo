@@ -2,10 +2,11 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import SelectCountries from "./selectCountries";
-import { FormHelperText, Switch, TextField } from "@mui/material";
+import { Switch, TextField } from "@mui/material";
 import SelectTypeCar from "./selectTypeCar";
 import SelectCity from "./selectCity";
 import axios from "axios";
+import InputError from "./InputError/intex";
 
 export interface IFormState {
     firstName: string;
@@ -61,70 +62,28 @@ const Form = () => {
             <div className="flex w-full gap-6">
                 <div className="w-1/2 flex flex-col gap-[0.313rem]">
                     <TextField {...register("firstName")} placeholder="First Name" className="w-full" error={Boolean(errors.firstName)} />
-                    {errors.firstName && (
-                        <FormHelperText error className="flex items-center justify-start w-1/2 gap-[0.375rem]">
-                            <img src="https://challengeuolpbcompass.s3.amazonaws.com/inputErrorIcon.svg" alt="" />
-                            <p className="text-base">
-                                {errors.firstName.message}
-                            </p>
-                        </FormHelperText>
-                    )}
+                    {errors.firstName && <InputError errorsMessage={errors.firstName.message as string}/>}
                 </div>
                 <div className="w-1/2 flex flex-col gap-[0.313rem]">
                     <TextField {...register("lastName")} placeholder="Last Name" className="w-full" error={Boolean(errors.lastName)} />
-                    {errors.lastName && (
-                        <FormHelperText error className="flex items-center justify-start w-1/2 gap-[0.375rem]">
-                            <img src="https://challengeuolpbcompass.s3.amazonaws.com/inputErrorIcon.svg" alt="" />
-                            <p className="text-base">
-                                {errors.lastName.message}
-                            </p>
-                        </FormHelperText>
-                    )}
+                    {errors.lastName && <InputError errorsMessage={errors.lastName.message as string}/>}
                 </div>
             </div>
             <div className="flex flex-col gap-[0.313rem]">
                 <TextField {...register("email")} placeholder="Email Address" error={Boolean(errors.email)} />
-                {errors.email && (
-                    <FormHelperText error className="flex items-center justify-start w-1/2 gap-[0.375rem]">
-                        <img src="https://challengeuolpbcompass.s3.amazonaws.com/inputErrorIcon.svg" alt="" />
-                        <p className="text-base">
-                            {errors.email.message}
-                        </p>
-                    </FormHelperText>
-                )}
+                {errors.email && <InputError errorsMessage={errors.email.message as string}/>}
             </div>
             <div className="flex flex-col gap-[0.313rem]">
                 <SelectCountries register={register} setValue={setValue} error={Boolean(errors.country)} />
-                {errors.country && (
-                    <FormHelperText error className="flex items-center justify-start w-1/2 gap-[0.375rem]">
-                        <img src="https://challengeuolpbcompass.s3.amazonaws.com/inputErrorIcon.svg" alt="" />
-                        <p className="text-base">
-                            {errors.country.message}
-                        </p>
-                    </FormHelperText>
-                )}
+                {errors.country && <InputError errorsMessage={errors.country.message as string}/>}
             </div>
             <div className="flex flex-col gap-[0.313rem]">
                 <SelectCity country={countryWatch} register={register} setValue={setValue} error={Boolean(errors.city)} />
-                {errors.city && (
-                    <FormHelperText error className="flex items-center justify-start w-1/2 gap-[0.375rem]">
-                        <img src="https://challengeuolpbcompass.s3.amazonaws.com/inputErrorIcon.svg" alt="" />
-                        <p className="text-base">
-                            Invalid city
-                        </p>
-                    </FormHelperText>
-                )}
+                {errors.city && <InputError errorsMessage="Invalid city"/>}
             </div>
             <div className="flex flex-col gap-[0.313rem]">
                 <TextField {...register("referralCode")} placeholder="Referral Code" error={Boolean(errors.referralCode)} />
-                {errors.referralCode && (
-                    <FormHelperText error className="flex items-center justify-start w-1/2 gap-[0.375rem]">
-                        <img src="https://challengeuolpbcompass.s3.amazonaws.com/inputErrorIcon.svg" alt="" />
-                        <p className="text-base">
-                            {errors.referralCode.message}
-                        </p>
-                    </FormHelperText>
-                )}
+                {errors.referralCode && <InputError errorsMessage={errors.referralCode.message as string}/>}
             </div>
             <div className="flex items-center justify-between">
                 <p className="text-base text-white">I drive my own car</p>
@@ -135,14 +94,7 @@ const Form = () => {
                 <div className="flex gap-3">
                     <SelectTypeCar register={register} setValue={setValue} />
                 </div>
-                {errors.carType && (
-                    <FormHelperText error className="flex items-center justify-start w-1/2 gap-[0.375rem]">
-                        <img src="https://challengeuolpbcompass.s3.amazonaws.com/inputErrorIcon.svg" alt="" />
-                        <p className="text-base">
-                            {"Select a vehicle type"}
-                        </p>
-                    </FormHelperText>
-                )}
+                {errors.carType && <InputError errorsMessage={"Select a vehicle type"}/>}
             </div>
             <button type="submit" className="flex justify-center items-center px-[4.625rem] py-5 self-start bg-[#FBA403] rounded-md">
                 <p className="text-white text-sm">
