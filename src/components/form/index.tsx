@@ -4,7 +4,6 @@ import * as z from "zod";
 import SelectCountries from "./selectCountries";
 import { FormHelperText, Switch, TextField } from "@mui/material";
 import SelectTypeCar from "./selectTypeCar";
-import { DevTool } from "@hookform/devtools";
 import SelectCity from "./selectCity";
 import axios from "axios";
 
@@ -36,7 +35,7 @@ const schema = z.object({
 });
 
 const Form = () => {
-    const { control, register, handleSubmit, setValue, watch, formState: { errors } } = useForm<IFormState>({
+    const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm<IFormState>({
         resolver: zodResolver(schema),
         mode: "onSubmit",
         defaultValues: {
@@ -49,11 +48,11 @@ const Form = () => {
         axios.post(`${import.meta.env.VITE_API_LINK}/driver-application`, data)
             .then(response => {
                 console.log(response.data);
-                console.log(data)
+                console.log(data);
             })
             .catch(error => {
                 console.error('There was an error!', error);
-                console.log(data)
+                console.log(data);
             });
     };
 
@@ -95,7 +94,7 @@ const Form = () => {
                 )}
             </div>
             <div className="flex flex-col gap-[0.313rem]">
-                <SelectCountries register={register} setValue={setValue} error={Boolean(errors.country)}/>
+                <SelectCountries register={register} setValue={setValue} error={Boolean(errors.country)} />
                 {errors.country && (
                     <FormHelperText error className="flex items-center justify-start w-1/2 gap-[0.375rem]">
                         <img src="https://challengeuolpbcompass.s3.amazonaws.com/inputErrorIcon.svg" alt="" />
@@ -106,8 +105,8 @@ const Form = () => {
                 )}
             </div>
             <div className="flex flex-col gap-[0.313rem]">
-            <SelectCity country={countryWatch} register={register} setValue={setValue} error={Boolean(errors.city)}/>
-            {errors.city && (
+                <SelectCity country={countryWatch} register={register} setValue={setValue} error={Boolean(errors.city)} />
+                {errors.city && (
                     <FormHelperText error className="flex items-center justify-start w-1/2 gap-[0.375rem]">
                         <img src="https://challengeuolpbcompass.s3.amazonaws.com/inputErrorIcon.svg" alt="" />
                         <p className="text-base">
@@ -151,7 +150,6 @@ const Form = () => {
                 </p>
             </button>
         </form>
-        <DevTool control={control} />
     </>
     );
 };

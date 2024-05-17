@@ -1,7 +1,7 @@
-import { FormHelperText, MenuItem, TextField } from "@mui/material";
+import { MenuItem, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { fetchCountries } from "../../../utils/fetchCountriesAndCity";
-import { FieldErrors, UseFormRegister, UseFormSetValue } from "react-hook-form";
+import { UseFormRegister, UseFormSetValue } from "react-hook-form";
 import { IFormState } from "..";
 
 interface ISelectCountriesProps {
