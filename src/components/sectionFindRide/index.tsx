@@ -52,8 +52,8 @@ const SectionFindRide = () => {
         if (!yourDestinationInput) {
             setSecondInputError(true);
         }
-        if(yourPickupInput && yourDestinationInput){
-            window.location.href="/randomPage"
+        if (yourPickupInput && yourDestinationInput) {
+            window.location.href = "/randomPage";
         }
     };
 

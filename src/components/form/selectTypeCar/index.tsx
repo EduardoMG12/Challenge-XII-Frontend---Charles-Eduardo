@@ -41,7 +41,6 @@ interface ISelectTypeCarProps {
     const handleCarTypeChange = (value: TCarType) => {
       setSelectedCarType(value);
       setValue("carType", value);
-      console.log(value)
     };
   
     return (

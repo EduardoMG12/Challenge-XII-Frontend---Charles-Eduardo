@@ -1,15 +1,22 @@
 import { useState } from "react";
 import Form from "../form";
 
-
 const SectionFormulary = () => {
-    const [sucessSendForm, setSucessSendForm] = useState({ formBool: false, returnApi: '' });
+    const [sucessSendForm, setSucessSendForm] = useState({
+        formBool: false,
+        returnApi: "",
+    });
 
     if (sucessSendForm.formBool) {
         return (
             <div className="mt-[6.25rem] bg-[#282828] mx-[58px] min-h-[871px] flex flex-col items-center  justify-center p-[1.875rem] pb-[1.875rem] gap-[2.875rem]">
-                <img src="https://challengeuolpbcompass.s3.amazonaws.com/checkIconSucessRequest.svg" alt="Green icon with a white checkmark in the center" />
-                <p className="text-[2.813rem] font-bold text-white">{sucessSendForm.returnApi}</p>
+                <img
+                    src="https://challengeuolpbcompass.s3.amazonaws.com/checkIconSucessRequest.svg"
+                    alt="Green icon with a white checkmark in the center"
+                />
+                <p className="text-[2.813rem] font-bold text-white">
+                    {sucessSendForm.returnApi}
+                </p>
             </div>
         );
     }

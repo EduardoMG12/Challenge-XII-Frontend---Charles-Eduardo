@@ -5,13 +5,19 @@ import { UseFormRegister, UseFormSetValue } from "react-hook-form";
 import { IFormState } from "..";
 
 interface ISelectCityProps {
-  register: UseFormRegister<IFormState>;
-  setValue: UseFormSetValue<IFormState>;
-  country: string;
-  error:boolean
+    register: UseFormRegister<IFormState>;
+    setValue: UseFormSetValue<IFormState>;
+    country: string;
+    error: boolean;
 }
 
-const SelectCity: React.FC<ISelectCityProps> = ({ register, setValue, country, error, ...props}) => {
+const SelectCity: React.FC<ISelectCityProps> = ({
+    register,
+    setValue,
+    country,
+    error,
+    ...props
+}) => {
     const [cities, setCities] = useState<string[]>();
     const [city, setCity] = useState<string>("City");
 
@@ -25,7 +31,7 @@ const SelectCity: React.FC<ISelectCityProps> = ({ register, setValue, country, e
         setCity(value);
         setValue("city", value);
     };
-  
+
     return (
         <TextField
             {...register("city")}
@@ -36,7 +42,11 @@ const SelectCity: React.FC<ISelectCityProps> = ({ register, setValue, country, e
             onChange={(e) => handleCityChange(e.target.value)}
             {...props}
         >
-            <MenuItem key="16541651" value="City" style={{ display: city ? 'none' : 'block' }}>
+            <MenuItem
+                key="16541651"
+                value="City"
+                style={{ display: city ? "none" : "block" }}
+            >
                 City
             </MenuItem>
             {cities &&
@@ -46,7 +56,7 @@ const SelectCity: React.FC<ISelectCityProps> = ({ register, setValue, country, e
                             {city}
                         </MenuItem>
                     );
-                })}  
+                })}
         </TextField>
     );
 };

@@ -47,7 +47,6 @@ export function fetchCities(
             country: countryName,
         })
         .then((response) => {
-            console.log(response)
             setCities(response.data.data);
         })
         .catch((error) => {

@@ -1,7 +1,10 @@
 import axios from "axios";
 import { ILocationState } from "../components/sectionFindRide";
 
-export function localStorageValidation(ip:string, setLocation:React.Dispatch<React.SetStateAction<ILocationState | null>>) {
+export function localStorageValidation(
+    ip: string,
+    setLocation: React.Dispatch<React.SetStateAction<ILocationState | null>>
+) {
     if (localStorage.getItem("ip") && localStorage.getItem("location")) {
         if (localStorage.getItem("ip") === ip) {
             setLocation(JSON.parse(localStorage.getItem("location")!));
@@ -15,7 +18,10 @@ export function localStorageValidation(ip:string, setLocation:React.Dispatch<Rea
     }
 }
 
-function fetchGeoLocation(ip:string, setLocation:React.Dispatch<React.SetStateAction<ILocationState | null>>) {
+function fetchGeoLocation(
+    ip: string,
+    setLocation: React.Dispatch<React.SetStateAction<ILocationState | null>>
+) {
     if (ip) {
         axios
             .get("https://api.ipgeolocation.io/ipgeo", {
@@ -26,10 +32,7 @@ function fetchGeoLocation(ip:string, setLocation:React.Dispatch<React.SetStateAc
             })
             .then((response) => {
                 setLocation(response.data);
-                localStorage.setItem(
-                    "location",
-                    JSON.stringify(response.data)
-                );
+                localStorage.setItem("location", JSON.stringify(response.data));
             })
             .catch((error) => {
                 console.error("Error find location:", error);
