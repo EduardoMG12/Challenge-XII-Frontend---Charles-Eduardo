@@ -57,7 +57,7 @@ export const theme = createTheme({
         MuiMenu: {
             styleOverrides: {
                 paper: {
-                    maxHeight: "6.25rem",
+                    maxHeight: "13.50rem",
                     backgroundColor: "#383838",
                     color: "#FFFFFF",
                 },
