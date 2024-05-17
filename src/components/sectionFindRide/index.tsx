@@ -61,7 +61,7 @@ const SectionFindRide = () => {
         <div className="w-full min-[1400px]:h-[46.36rem] px-4 min-[1400px]:px-24 flex flex-col mt-20 min-[1400px]:mt-0 min-[1400px]:flex-row justify-between items-center">
             <img
                 src="https://challengeuolpbcompass.s3.amazonaws.com/Home/imageFirstSectionFindRide.png"
-                alt=""
+                alt="Image of a vignette with low saturation featuring a building. In front of the building is a car that resembles a yellow Audi sedan with high saturation. On top of the car is a yellow balloon-shaped icon containing the logo ‘My Ride’"
                 className="rouned-[0.6rem]"
             />
             <div>
@@ -102,7 +102,7 @@ const SectionFindRide = () => {
                             >
                                 <img
                                     src="https://challengeuolpbcompass.s3.amazonaws.com/Home/lupe.svg"
-                                    alt=""
+                                    alt="White icon of a magnifying glass"
                                 />{" "}
                                 FIND A DRIVER
                             </a>

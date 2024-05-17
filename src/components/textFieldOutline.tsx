@@ -47,14 +47,14 @@ const MyTextField:React.FC<ITextFielProps> = ({defaultValue, label, focused, val
             <IconButton edge="end" onClick={handleClear}>
             {value ? focused 
             ?
-            <img src="https://challengeuolpbcompass.s3.amazonaws.com/Home/focusClearInput.svg" alt=""/>
+            <img src="https://challengeuolpbcompass.s3.amazonaws.com/Home/focusClearInput.svg" alt="Yellow icon of an ‘X’"/>
              : 
              isFocused 
              ? 
-             <img src="https://challengeuolpbcompass.s3.amazonaws.com/Home/focusClearInput.svg" alt=""/>
+             <img src="https://challengeuolpbcompass.s3.amazonaws.com/Home/focusClearInput.svg" alt="Yellow icon of an ‘X’"/>
              : 
              
-                <img src="https://challengeuolpbcompass.s3.amazonaws.com/Home/clearInput.svg" alt=""/>
+                <img src="https://challengeuolpbcompass.s3.amazonaws.com/Home/clearInput.svg" alt="White icon of an ‘X’"/>
                : null }
             </IconButton>
           </InputAdornment>

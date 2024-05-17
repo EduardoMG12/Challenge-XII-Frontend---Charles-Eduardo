@@ -6,25 +6,25 @@ const carTypes = [
     {
         type: "sedan",
         imgSrc: "https://challengeuolpbcompass.s3.amazonaws.com/Home/sectionThreeFormulary/sedanIcon.svg",
-        altImg: "",
+        altImg: "Simple icon of a completely yellow sedan car",
         value: "Sedan"
     },
     {
         type: "suv/van",
         imgSrc: "https://challengeuolpbcompass.s3.amazonaws.com/Home/sectionThreeFormulary/busIcon.svg",
-        altImg: "",
+        altImg: "Simple icon of a completely yellow mini van",
         value: "SUV/Van"
     },
     {
         type: "semi luxury",
         imgSrc: "https://challengeuolpbcompass.s3.amazonaws.com/Home/sectionThreeFormulary/esportiveIcon.svg",
-        altImg: "",
+        altImg: "Simple icon of a completely yellow esporive car",
         value: "Semi Luxury"
     },
     {
         type: "luxury",
         imgSrc: "https://challengeuolpbcompass.s3.amazonaws.com/Home/sectionThreeFormulary/convertibleIcon.svg",
-        altImg: "",
+        altImg: "Simple icon of a completely yellow esportive car convetible",
         value: "Luxury Car"
     }
 ];
