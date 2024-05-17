@@ -6,7 +6,7 @@ const Outlet = () => {
     return (
         <>
             <Header />
-                <RouterDomOutlet />
+            <RouterDomOutlet />
             <Footer />
         </>
     );
