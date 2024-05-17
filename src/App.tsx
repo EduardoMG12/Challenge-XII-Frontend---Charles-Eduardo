@@ -1,10 +1,12 @@
+import { lazy, Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Home from "./pages/home";
 import "./index.css";
 import OutletComponent from "./components/outlet";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
-import NotFound from "./pages/notFound";
+import Loading from "./pages/loading";
+const Home = lazy(() => import("./pages/home"));
+const NotFound = lazy(() => import("./pages/notFound"));
 
 const App = () => {
     return (
@@ -12,8 +14,22 @@ const App = () => {
             <Router>
                 <Routes>
                     <Route path="/" element={<OutletComponent />}>
-                        <Route index element={<Home />} />
-                        <Route path="*" element={<NotFound />} />
+                        <Route
+                            index
+                            element={
+                                <Suspense fallback={<Loading />}>
+                                    <Home />
+                                </Suspense>
+                            }
+                        />
+                        <Route
+                            path="*"
+                            element={
+                                <Suspense fallback={<Loading />}>
+                                    <NotFound />
+                                </Suspense>
+                            }
+                        />
                     </Route>
                 </Routes>
             </Router>

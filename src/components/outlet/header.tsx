@@ -11,7 +11,6 @@ const Header = () => {
                     </a>
                 </div>
                 <ul className="flex flex-col sm:flex-row items-center justify-around gap-7">
-                    {/* make a question about li, is this yellow because hover or because this page selected */}
                     <li className="text-[#FBA403] cursor-pointer text-base">
                         <a href="/">Home</a>
                     </li>
