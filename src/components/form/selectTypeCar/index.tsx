@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { UseFormSetValue } from "react-hook-form";
+import { UseFormRegister, UseFormSetValue } from "react-hook-form";
 import { IFormState, TCarType } from "..";
 
 const carTypes = [
@@ -29,16 +29,19 @@ const carTypes = [
     }
 ];
 
+
 interface ISelectTypeCarProps {
+    register: UseFormRegister<IFormState>;
     setValue: UseFormSetValue<IFormState>;
   }
   
-  const SelectTypeCar: React.FC<ISelectTypeCarProps> = ({ setValue, ...props }) => {
+  const SelectTypeCar: React.FC<ISelectTypeCarProps> = ({ register, setValue, ...props }) => {
     const [selectedCarType, setSelectedCarType] = useState<TCarType | "">("sedan");
   
     const handleCarTypeChange = (value: TCarType) => {
       setSelectedCarType(value);
       setValue("selectTypeCar", value);
+      console.log(value)
     };
   
     return (
@@ -49,8 +52,10 @@ interface ISelectTypeCarProps {
             linkImg={car.imgSrc}
             altImg={car.altImg}
             value={car.value}
-            selected={car.type === selectedCarType}
+            type={car.type as TCarType}
+            selected={car.type == selectedCarType}
             onClick={() => handleCarTypeChange(car.type as TCarType)}
+            register={register}
             {...props}
           />
         ))}
@@ -62,20 +67,23 @@ interface ISelectTypeCarProps {
     linkImg: string;
     altImg: string;
     value: string;
+    type:TCarType,
     selected: boolean;
     onClick: () => void;
+    register: UseFormRegister<IFormState>;
   }
   
-  const ItemTypeCar: React.FC<IPropsItemTypeCar> = ({ linkImg, altImg, value, selected, onClick, ...props }) => {
+  const ItemTypeCar: React.FC<IPropsItemTypeCar> = ({ linkImg, altImg, value, selected, onClick, register, type, ...props }) => {
     return (
-      <div
+      <label
         {...props}
-        className={`flex flex-col items-center justify-center h-20 w-[9.156rem] border border-white rounded gap-[0.313rem] ${selected ? "border-[#FBA403]" : ""}`}
+        className={`flex flex-col items-center justify-center h-20 w-[9.156rem] border rounded gap-[0.313rem] ${selected ? "border-[#FBA403]" : ""}`}
         onClick={onClick}
       >
         <img src={linkImg} alt={altImg} className="w-[2.149rem]" />
         <p className="text-sm text-white">{value}</p>
-      </div>
+        <input type="radio" value={type} {...register("selectTypeCar")} style={{ display: 'none' }} />
+      </label>
     );
   };
   
