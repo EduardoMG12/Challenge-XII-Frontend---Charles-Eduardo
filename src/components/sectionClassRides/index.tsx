@@ -26,7 +26,7 @@ const SectionClassRides = () => {
     }, []);
 
     return (
-        <div className="flex flex-col w-full justify-center items-center">
+        <div id="mobileApp" className="flex flex-col w-full justify-center items-center">
             <div>
                 <h3 className="text-2xl text-[#FBA403] mt-[3.75rem]">
                     WHY SHOULD YOU RIDE WHITH US?

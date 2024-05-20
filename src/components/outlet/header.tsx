@@ -15,13 +15,13 @@ const Header = () => {
                         <a href="/">Home</a>
                     </li>
                     <li className="text-white cursor-pointer text-base">
-                        <a href="/iDontKnowSomePage">Getting a Taxi</a>
+                        <a href="#gettingATaxi">Getting a Taxi</a>
                     </li>
                     <li className="text-white cursor-pointer text-base">
-                        <a href="/iDontKnowSomePage2">Mobile App</a>
+                        <a href="#mobileApp">Mobile App</a>
                     </li>
                     <li className="text-white cursor-pointer text-base">
-                        <a href="/iDontKnowSomePag3">Contact Us</a>
+                        <a href="#footer">Contact Us</a>
                     </li>
                 </ul>
                 <div className="flex items-center gap-5">

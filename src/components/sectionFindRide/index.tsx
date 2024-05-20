@@ -58,7 +58,7 @@ const SectionFindRide = () => {
     };
 
     return (
-        <div className="w-full min-[1400px]:h-[46.36rem] px-4 min-[1400px]:px-24 flex flex-col mt-20 min-[1400px]:mt-0 min-[1400px]:flex-row justify-between items-center">
+        <div id="gettingATaxi" className="w-full min-[1400px]:h-[46.36rem] px-4 min-[1400px]:px-24 flex flex-col mt-20 min-[1400px]:mt-0 min-[1400px]:flex-row justify-between items-center">
             <img
                 src="https://challengeuolpbcompass.s3.amazonaws.com/Home/imageFirstSectionFindRide.png"
                 alt="Image of a vignette with low saturation featuring a building. In front of the building is a car that resembles a yellow Audi sedan with high saturation. On top of the car is a yellow balloon-shaped icon containing the logo ‘My Ride’"
