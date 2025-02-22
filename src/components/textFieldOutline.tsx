@@ -2,6 +2,7 @@ import React, { ComponentProps, useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
+import { XIcon } from "../iconsSvg/XIcon";
 
 interface ITextFielProps extends ComponentProps<"input"> {
     label: string;
@@ -55,20 +56,11 @@ const MyTextField: React.FC<ITextFielProps> = ({
                         <IconButton edge="end" onClick={handleClear}>
                             {value ? (
                                 focused ? (
-                                    <img
-                                        src="https://challengeuolpbcompass.s3.amazonaws.com/Home/focusClearInput.svg"
-                                        alt="Yellow icon of an ‘X’"
-                                    />
+                                    <XIcon colorIcon="#FBA403" />
                                 ) : isFocused ? (
-                                    <img
-                                        src="https://challengeuolpbcompass.s3.amazonaws.com/Home/focusClearInput.svg"
-                                        alt="Yellow icon of an ‘X’"
-                                    />
+                                    <XIcon colorIcon="#FBA403" />
                                 ) : (
-                                    <img
-                                        src="https://challengeuolpbcompass.s3.amazonaws.com/Home/clearInput.svg"
-                                        alt="White icon of an ‘X’"
-                                    />
+                                    <XIcon />
                                 )
                             ) : null}
                         </IconButton>

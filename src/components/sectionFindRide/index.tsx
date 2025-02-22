@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MyTextField from "../textFieldOutline";
 import axios from "axios";
 import { localStorageValidation } from "../../utils/fetchGeoLocation";
+import { SearchIcon } from "../../iconsSvg/searchIcon";
 
 export interface ILocationState {
     city: string;
@@ -28,7 +29,8 @@ const SectionFindRide = () => {
         axios
             .get("https://api.ipify.org?format=json")
             .then((response) => {
-                setIp(response.data.ip);
+                if (response.data.ip) setIp(response.data.ip);
+                else (console.error("Erro ao buscar IP:", response)); // I not want to stay my env variables in the code for security reasons so I will use String "São Paulo, SP" as default
             })
             .catch((error) => {
                 console.error("Erro ao buscar IP:", error);
@@ -40,8 +42,10 @@ const SectionFindRide = () => {
     }, [ip]);
 
     useEffect(() => {
-        if (location) {
+        if (location?.city) {
             setYourPickupInput(`${location.city}, ${location.state_prov}`);
+        } else {
+            setYourPickupInput("São Paulo, SP");
         }
     }, [location]);
 
@@ -60,7 +64,7 @@ const SectionFindRide = () => {
     return (
         <div id="gettingATaxi" className="w-full min-[1400px]:h-[46.36rem] px-4 min-[1400px]:px-24 flex flex-col mt-20 min-[1400px]:mt-0 min-[1400px]:flex-row justify-between items-center">
             <img
-                src="https://challengeuolpbcompass.s3.amazonaws.com/Home/imageFirstSectionFindRide.png"
+                src="public/imagesAfterDownCDN/heroImageFirstSectionFindRide.png"
                 alt="Image of a vignette with low saturation featuring a building. In front of the building is a car that resembles a yellow Audi sedan with high saturation. On top of the car is a yellow balloon-shaped icon containing the logo ‘My Ride’"
                 className="rouned-[0.6rem]"
             />
@@ -98,15 +102,12 @@ const SectionFindRide = () => {
                         <div className="flex items-center justify-between">
                             <a
                                 onClick={validationInputs}
-                                className="rounded-[0.25rem] flex items-center gap-1 bg-[#FBA403] px-2 py-5 min-[1400px]:px-7 min-[1400px]:py-4 text-white"
+                                className="rounded-[0.25rem] flex items-center gap-1 bg-[#FBA403] px-2 py-5 min-[1400px]:px-7 min-[1400px]:py-4 text-white cursor-pointer"
                             >
-                                <img
-                                    src="https://challengeuolpbcompass.s3.amazonaws.com/Home/lupe.svg"
-                                    alt="White icon of a magnifying glass"
-                                />{" "}
+                                <SearchIcon />{" "}
                                 FIND A DRIVER
                             </a>
-                            <p className="text-[#FBA403]">MORE OPTIONS</p>
+                            <p className="text-[#FBA403] cursor-pointer">MORE OPTIONS</p>
                         </div>
                     </form>
                 </div>
