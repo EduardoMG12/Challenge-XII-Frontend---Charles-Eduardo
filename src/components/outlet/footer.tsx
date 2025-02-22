@@ -1,12 +1,14 @@
+import Instagram from "../../iconsSvg/ instagram";
+import Facebook from "../../iconsSvg/facebook";
+import { LogoIcon } from "../../iconsSvg/logoIcon";
+import Twitter from "../../iconsSvg/twitter";
+
 const Footer = () => {
     return (
         <footer id="footer" className="h-60 max-w-full  px-20 py-10 flex items-center sm:items-start gap-20 flex-col sm:flex-row mb-10">
             <div className="flex flex-col justify-center sm:justify-start items-center sm:items-start gap-4">
                 <a href="/">
-                    <img
-                        src="https://challengeuolpbcompass.s3.amazonaws.com/Outlet/logoIcon/LogoMyRideFillWhite.svg"
-                        alt="Logo in the shape of an isosceles triangle with slightly rounded edges, entirely in white. The logo is inscribed within a circle. The word ‘my’ is written in the upper part of the circle, and below ‘my’, within the isosceles triangle that lacks a background, the word ‘ride’ is written."
-                    />
+                    <LogoIcon />
                 </a>
                 <p className="text-[#B3B3B3]">
                     MyRide Inc., 2nd Floor, New York, NY 10016
@@ -16,25 +18,16 @@ const Footer = () => {
                         href="https://www.facebook.com/compass.uol/"
                         target="_blank"
                     >
-                        <img
-                            src="https://challengeuolpbcompass.s3.amazonaws.com/Outlet/socialIcons/Facebook.svg"
-                            alt="facebook icon with background full rounded white"
-                        />
+                        <Facebook />
                     </a>
                     <a
                         href="https://www.instagram.com/compass.uol/"
                         target="_blank"
                     >
-                        <img
-                            src="https://challengeuolpbcompass.s3.amazonaws.com/Outlet/socialIcons/Instagram.svg"
-                            alt="instagram icon with background full rounded white"
-                        />
+                        <Instagram />
                     </a>
                     <a href="https://twitter.com/compassuol" target="_blank">
-                        <img
-                            src="https://challengeuolpbcompass.s3.amazonaws.com/Outlet/socialIcons/Twitter.svg"
-                            alt="twitter icon with background full rounded white"
-                        />
+                        <Twitter />
                     </a>
                 </div>
             </div>
