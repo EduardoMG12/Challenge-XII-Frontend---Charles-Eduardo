@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
 import Card from "../card";
 import axios from "axios";
+import { ICard, myRideCards } from "../../mock/cards";
 
-export interface ICard {
-    id: number;
-    altImg: string;
-    imgUrl: string;
-    title: string;
-    paragraph: string;
-    cardLinkLearnMore: string;
-}
+
 
 const SectionClassRides = () => {
-    const [cards, setCards] = useState<ICard[]>();
+    const [cards, setCards] = useState<ICard[] | null>();
 
     useEffect(() => {
         axios
             .get(`${import.meta.env.VITE_API_LINK}/cards`)
             .then((response) => {
-                setCards(response.data);
+                const cardsFetch: ICard[] = response.data;
+                if (!cardsFetch[0].id) {
+                    setCards(myRideCards);
+                    return;
+                }
+                if (cardsFetch[0].title) setCards(response.data);
             })
             .catch((error) => {
                 console.error("Erro find card:", error);
+                setCards(myRideCards);
             });
     }, []);
 
