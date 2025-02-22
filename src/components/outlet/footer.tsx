@@ -1,7 +1,7 @@
-import Instagram from "../../iconsSvg/ instagram";
-import Facebook from "../../iconsSvg/facebook";
-import { LogoIcon } from "../../iconsSvg/logoIcon";
-import Twitter from "../../iconsSvg/twitter";
+import Instagram from "../../icons/ instagram";
+import Facebook from "../../icons/facebook";
+import { LogoIcon } from "../../icons/logoIcon";
+import Twitter from "../../icons/twitter";
 
 const Footer = () => {
     return (

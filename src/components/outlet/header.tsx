@@ -1,5 +1,5 @@
-import { BellIcon } from "../../iconsSvg/bellIcon";
-import { LogoIcon } from "../../iconsSvg/logoIcon";
+import { BellIcon } from "../../icons/bellIcon";
+import { LogoIcon } from "../../icons/logoIcon";
 
 const Header = () => {
     return (

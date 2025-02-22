@@ -22,14 +22,14 @@ const App = () => {
                                 </Suspense>
                             }
                         />
-                        <Route
+                        {/* <Route
                             path="*"
                             element={
                                 <Suspense fallback={<Loading />}>
                                     <NotFound />
                                 </Suspense>
                             }
-                        />
+                        /> */}
                     </Route>
                 </Routes>
             </Router>

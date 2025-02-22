@@ -2,7 +2,7 @@ import React, { ComponentProps, useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
-import { XIcon } from "../iconsSvg/XIcon";
+import { XIcon } from "../icons/XIcon";
 
 interface ITextFielProps extends ComponentProps<"input"> {
     label: string;

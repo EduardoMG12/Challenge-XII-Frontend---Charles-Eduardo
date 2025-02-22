@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import MyTextField from "../textFieldOutline";
 import axios from "axios";
 import { localStorageValidation } from "../../utils/fetchGeoLocation";
-import { SearchIcon } from "../../iconsSvg/searchIcon";
+import { SearchIcon } from "../../icons/searchIcon";
 
 export interface ILocationState {
     city: string;
