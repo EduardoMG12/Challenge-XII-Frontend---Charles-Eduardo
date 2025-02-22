@@ -5,6 +5,7 @@ import OutletComponent from "./components/outlet";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
 import Loading from "./pages/loading";
+const Readme = lazy(() => import("./pages/readme"));
 const Home = lazy(() => import("./pages/home"));
 const NotFound = lazy(() => import("./pages/notFound"));
 
@@ -22,14 +23,22 @@ const App = () => {
                                 </Suspense>
                             }
                         />
-                        {/* <Route
+                        <Route
+                            path="/README"
+                            element={
+                                <Suspense fallback={<Loading />}>
+                                    <Readme />
+                                </Suspense>
+                            }
+                        />
+                        <Route
                             path="*"
                             element={
                                 <Suspense fallback={<Loading />}>
                                     <NotFound />
                                 </Suspense>
                             }
-                        /> */}
+                        />
                     </Route>
                 </Routes>
             </Router>
