@@ -24,7 +24,7 @@ const App = () => {
                             }
                         />
                         <Route
-                            path="/README"
+                            path="/readme"
                             element={
                                 <Suspense fallback={<Loading />}>
                                     <Readme />

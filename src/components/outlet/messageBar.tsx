@@ -11,7 +11,7 @@ export default function MessageBar() {
                 }`}
         >
             {!isMinimized && (
-                <a href="/README">
+                <a href="/readme">
                     <p className="text-white text-lg transition-opacity duration-300">
                         🚀 Confira a documentação completa do projeto e veja todos os detalhes! 🚀
                     </p>
