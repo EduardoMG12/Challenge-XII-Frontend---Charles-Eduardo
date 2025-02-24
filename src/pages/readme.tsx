@@ -3,6 +3,7 @@ import Discord from "../icons/discordLink";
 import Github from "../icons/github";
 import GithubLink from "../icons/githubLink";
 import Linkedin from "../icons/linkedinLink";
+import GmailIcon from "../icons/gmail";
 
 export default function Readme() {
     return (
@@ -302,106 +303,10 @@ export default function Readme() {
                 <a href="https://www.instagram.com/charlesmellog/" target="_blank">
                     <Instagram />
                 </a>
+                <a href="mailto:charleshdeveloper@gmail.com" target="_blank">
+                    <GmailIcon />
+                </a>
             </div>
         </div>
     );
 }
-
-// const Readme = () => {
-//     return (
-//         <div className="min-h-dvh min-w-full max-w-full flex justify-around ">
-//             <div>
-//                 <h1 className="text-[#FBA403]">Fiz esta pagina para</h1>
-//                 <h1 className="text-[#FFFF] font-bold text-2xl">Fiz esta pagina para</h1>
-//             </div>
-//             <div></div>
-//         </div>
-//     );
-
-// };
-// export default Readme;
-
-// Introdução
-
-// O projeto Challenge XII teve início em 7 de maio de 2024 e teve como objetivo criar um backend e um frontend completos, com a possibilidade de hospedar a aplicação na AWS. A proposta envolvia a criação de um sistema de motoristas similar ao Uber, seguindo requisitos específicos.
-
-// Backend
-
-// Descrição
-// O backend do projeto consistia na criação de uma API para gerenciamento de motoristas, garantindo as seguintes exigências:
-// Utilização do NestJS como framework principal.
-// Armazenamento de imagens no Amazon S3.
-// Uso de um banco de dados relacional via AWS RDS.
-// Implementação de um ORM para manipulação do banco de dados.
-// Preenchimento dos dados das seções 2 e 3 conforme disponibilizados no Figma.
-// Validação dos campos do formulário no backend utilizando class-validator.
-// Frontend
-// Descrição
-// O frontend foi desenvolvido utilizando React com TypeScript, com as seguintes exigências:
-// Utilização de qualquer framework ou biblioteca opcional.
-// Consumo de imagens armazenadas no Amazon S3.
-// Seguir o layout definido no Figma.
-// Responsividade garantida para 1440px e 414px.
-// Implementação de um header e footer estáticos.
-// Criação de uma página 404 personalizada com fundo preto e ícone de atenção amarelo.
-// Links do footer redirecionando para a página 404.
-// Links das redes sociais levando para os perfis da Compass.
-// Atendimento aos requisitos e prazos documentados no Notion.
-// Estrutura do Frontend
-// O frontend foi desenvolvido utilizando Vite com a seguinte estrutura de pastas:
-// ~/Challenge-XII-Frontend---Charles-Eduardo
-// ├── .dockerignore
-// ├── .editorconfig
-// ├── .eslintrc.cjs
-// ├── .git
-// ├── .gitignore
-// ├── bun.lockb
-// ├── docker-compose.yml
-// ├── Dockerfile
-// ├── index.html
-// ├── nginx/
-// ├── node_modules/
-// ├── package.json
-// ├── pnpm-lock.yaml
-// ├── postcss.config.js
-// ├── public/
-// ├── README.md
-// ├── src/
-// │   ├── App.tsx
-// │   ├── components/
-// │   │   ├── card/
-// │   │   ├── form/
-// │   │   ├── loading.tsx
-// │   │   ├── outlet/
-// │   │   ├── sectionClassRides/
-// │   │   ├── sectionFindRide/
-// │   │   ├── sectionFormulary/
-// │   │   └── textFieldOutline.tsx
-// │   ├── icons/
-// │   ├── index.css
-// │   ├── main.tsx
-// │   ├── mock/
-// │   ├── pages/
-// │   │   ├── home.tsx
-// │   │   ├── loading.tsx
-// │   │   ├── notFound.tsx
-// │   │   └── readme.tsx
-// │   ├── theme/
-// │   ├── utils/
-// │   │   │── fetchCountriesAndCity.ts
-// │   │   └── fetchGeoLocation.ts
-// │   └── vite-env.d.ts
-// ├── tailwind.config.js
-// ├── tsconfig.json
-// ├── tsconfig.node.json
-// └── vite.config.ts
-
-// esultados e Desafios
-
-// O frontend foi implementado com pixel perfect, seguindo fielmente o design especificado no Figma.A estrutura de pastas foi organizada para facilitar a manutenção do código.
-
-//     Infelizmente, o projeto não foi implantado na AWS, o que teria sido um diferencial.No entanto, os objetivos principais do desafio foram atingidos, garantindo um código bem estruturado e responsivo.
-
-//         Conclusão
-
-// O Challenge XII foi um desafio interessante que exigiu conhecimento avançado em React, TypeScript, NestJS e AWS.Apesar da não implementação na AWS, o resultado final trouxe uma solução bem elaborada, com um frontend responsivo e um backend estruturado conforme as diretrizes do desafio.;
