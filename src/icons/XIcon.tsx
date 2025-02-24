@@ -1,4 +1,4 @@
-export function XIcon({ colorIcon = "#FFFFFF", onClick }: { colorIcon?: string, onClick: () => void; }) {
+export function XIcon({ colorIcon = "#FFFFFF", onClick }: { colorIcon?: string, onClick?: () => void; }) {
     return (
         <svg
             width="12"
