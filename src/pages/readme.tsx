@@ -46,7 +46,7 @@ export default function Readme() {
             <div className="flex flex-row items-center gap-4 mt-4">
                 <p className="text-[#FFFF] text-2xl">Link do Repositório:</p>
                 <a
-                    href="http://https://github.com/EduardoMG12/Challenge-XII-Backend---Charles-Eduardo"
+                    href="https://www.github.com/EduardoMG12/Challenge-XII-Backend---Charles-Eduardo"
                     target="_blank"
                 >
                     <Github heightAndWidth={60} />
@@ -77,7 +77,7 @@ export default function Readme() {
             <div className="flex flex-row items-center gap-4 mt-4">
                 <p className="text-[#FFFF] text-2xl">Link do Repositório:</p>
                 <a
-                    href="https://github.com/EduardoMG12/Challenge-XII-Frontend---Charles-Eduardo"
+                    href="https://www.github.com/EduardoMG12/Challenge-XII-Frontend---Charles-Eduardo"
                     target="_blank"
                     className=""
                 >
