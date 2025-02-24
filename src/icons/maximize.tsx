@@ -1,7 +1,9 @@
-export default function MaximizeIcon({ colorIcon = "#FFFFFF", onClick }: { colorIcon?: string, onClick: () => void; }) {
+import { HTMLProps } from "react";
+
+export default function MaximizeIcon({ colorIcon = "#FFFFFF", onClick, className }: { colorIcon?: string, onClick: () => void, className?: HTMLProps<HTMLElement>["className"]; }) {
     return <svg fill={colorIcon} height="20" width="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
         onClick={onClick}
-
+        className={className}
         viewBox="0 0 512 512">
         <g>
             <g>

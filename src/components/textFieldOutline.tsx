@@ -56,11 +56,11 @@ const MyTextField: React.FC<ITextFielProps> = ({
                         <IconButton edge="end" onClick={handleClear}>
                             {value ? (
                                 focused ? (
-                                    <XIcon colorIcon="#FBA403" />
+                                    <XIcon colorIcon="#FBA403" className="cursor-pointer" />
                                 ) : isFocused ? (
-                                    <XIcon colorIcon="#FBA403" />
+                                    <XIcon colorIcon="#FBA403" className="cursor-pointer" />
                                 ) : (
-                                    <XIcon />
+                                    <XIcon className="cursor-pointer" />
                                 )
                             ) : null}
                         </IconButton>

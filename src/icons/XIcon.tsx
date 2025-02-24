@@ -1,4 +1,6 @@
-export function XIcon({ colorIcon = "#FFFFFF", onClick }: { colorIcon?: string, onClick?: () => void; }) {
+import { HTMLProps } from "react";
+
+export function XIcon({ colorIcon = "#FFFFFF", onClick, className }: { colorIcon?: string, onClick?: () => void, className?: HTMLProps<HTMLElement>["className"]; }) {
     return (
         <svg
             width="12"
@@ -6,7 +8,7 @@ export function XIcon({ colorIcon = "#FFFFFF", onClick }: { colorIcon?: string, 
             viewBox="0 0 12 13"
             xmlns="http://www.w3.org/2000/svg"
             fill={colorIcon}
-            className="hover:cursor-pointer"
+            className={className}
             onClick={onClick}
         >
             <path

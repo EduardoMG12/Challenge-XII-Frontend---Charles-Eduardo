@@ -20,10 +20,10 @@ export default function MessageBar() {
             <div className="flex justify-center items-center w-10">
                 {isMinimized ?
 
-                    <MaximizeIcon onClick={() => setIsMinimized(!isMinimized)} /> :
+                    <MaximizeIcon onClick={() => setIsMinimized(!isMinimized)} className="cursor-pointer" /> :
 
 
-                    <XIcon onClick={() => setIsMinimized(!isMinimized)} />
+                    <XIcon onClick={() => setIsMinimized(!isMinimized)} className="cursor-pointer" />
                 }
             </div>
         </div>
