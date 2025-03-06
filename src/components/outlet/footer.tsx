@@ -7,7 +7,7 @@ const Footer = () => {
         <footer id="footer" className="h-60 max-w-full  px-20 py-10 flex items-center sm:items-start gap-20 flex-col sm:flex-row mb-10">
             <div className="flex flex-col justify-center sm:justify-start items-center sm:items-start gap-4">
                 <a href="/">
-                    <img src="public/imagesAfterDownCDN/logoFooter.png" alt="" />
+                    <img src="/imagesAfterDownCDN/logoFooter.png" alt="" />
                 </a>
                 <p className="text-[#B3B3B3]">
                     MyRide Inc., 2nd Floor, New York, NY 10016
